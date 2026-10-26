@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+   <body class="page">
+        <header class="page__header">
+            <a href="index.html" class="site-title">Алгоритми та структури даних</a>
+        </header>
+        <aside class="page__sidebar">
+            <h2>Навігація</h2>
+            <nav>
+                <ul class="menu">
+                    <li><a href="index.html" class="menu__link">Головна</a></li>
+                    <li><a href="about.html" class="menu__link">Про напрям</a></li>
+                    <li><a href="/pages/resources.html" class="menu__link">Ресурси</a></li>
+                    <li><a href="comparison.html" class="menu__link">Порівняння</a></li>
+                    <li><a href="gallery.html" class="menu__link">Галерея</a></li>
+                    <li><a href="contacts.html" class="menu__link">Зворотний зв'язок</a></li>
+                    <li><a href="application.html" class="menu__link">Заявка на участь</a></li>
+                </ul>   
+            </nav>
+        </aside>
+    <main class="page__main container">
+        <h1>Заявка на участь у проєкті</h1>
+
+        <form action="submit" method="post">
+            <fieldset>
+                <legend>Контактна інформація</legend>
+                <label for="fullname">Прізвище та ім'я:</label>
+                <input type="text" id="fullname" name="fullname" minlength="5" maxlength="100" autocomplete="name" required>
+                <br><br>
+            
+                <label for="email">Електронна пошта:</label>
+                <input type="email" id="email" name="email" autocomplete="email" required>
+                <br><br>   
+
+                <label for="phone">Номер телефону:</label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel"
+                pattern="\+380[0-9]{9}" 
+                title="Формат: +380671234567" required>
+                <br><br>
+
+                <label for="course">Курс навчання:</label>
+                <select id="course" name="course" required>
+                    <option value="">Виберіть курс</option>
+                    <option value="1">1 курс</option>
+                    <option value="2">2 курс</option>
+                    <option value="3">3 курс</option>
+                    <option value="4">4 курс</option>
+                </select>
+                <br><br>    
+            </fieldset>
+
+            <fieldset>
+                <legend>Деталі участі</legend>
+                <label for="start-date">Дата початку участі:</label>
+                <input type="date" id="start-date" name="start_date">
+                <br><br>
+            
+                <label for="level">Рівень підготовки:</label><br>
+                <input type="radio" id="level_beginner" name="prep_level" value="Початковий">
+                <label for="level_beginner">Початковий</label>
+                
+                <input type="radio" id="level_intermediate" name="prep_level" value="Середній">
+                <label for="level_intermediate">Середній</label>
+                
+                <input type="radio" id="level_advanced" name="prep_level" value="Високий">
+                <label for="level_advanced">Високий</label>
+                <br><br>
+            
+                <label for="stack">Технологічний стек:</label>
+                <select id="stack" name="stack" required>
+                    <option value="">Виберіть технологію</option> 
+                    <optgroup label="Мови програмування">
+                        <option value="python">Python</option>
+                        <option value="cpp">C++</option>
+                    </optgroup>
+                    <optgroup label="Клієнтські технології">
+                        <option value="js">JavaScript</option>
+                    </optgroup>
+                </select>
+                <br><br>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Досвід та портфоліо</legend>
+
+                <label for="portfolio">Файл портфоліо:</label>
+                <input type="file" id="portfolio" name="portfolio" accept=".pdf,.doc,.docx,.zip">
+                <br><br>
+            
+                <label for="message">Короткий опис досвіду:</label><br>
+                <textarea id="message" name="message" rows="5" minlength="10" placeholder="Розкажіть коротко про свій досвід у програмуванні..." required></textarea>
+                <br><br>
+            </fieldset>
+            
+            <button type="submit" class="btn">Надіслати заявку</button>
+            <button type="reset" class="btn">Очистити форму</button>
+            <button type="button" id="preview-btn" class="btn">Попередній перегляд</button>
+        </form>
+    </main>
+    <footer class="page__footer">
+            <address>
+                <br>Крутих Ілля група КН-21<br>
+                <a href="mailto:krutyhila9@example.com">krutyhila9@example.com</a><br>
+                <a href="tel:+380507341000">+38 (050) 734 1000</a>
+            </address>
+            <p>&copy; 2026 Крутих Ілля</p>
+    </footer>
+</body>
+</html>
