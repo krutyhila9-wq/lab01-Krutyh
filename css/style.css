@@ -1,10 +1,10 @@
 /*1. СКИДАННЯ ТА БЛОКОВА МОДЕЛЬ */
-/*border входять у загальну ширину елемента.(Лаб 7)*/
-*,*::before,*::after {
+*, *::before, *::after {
     box-sizing: border-box;
 }
-/*2.ЗМІННІ(Лаб 6) */
-   :root {
+
+/*2. ЗМІННІ */
+:root {
     --color-primary: hsl(38, 54%, 46%);
     --color-primary-light: hsl(54, 87%, 62%);
     --color-primary-soft: hsl(36, 72%, 57%);
@@ -24,7 +24,19 @@
     --space-4: 1.5rem;   
     --space-5: 2rem;     
     --space-6: 3rem;     
+
+    /* Нові змінні для редизайну та ритму */
+    --color-bg: #FFFFFF;         
+    --color-accent-new: #E74C3C; 
+
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-2xl: 48px;
 }
+
 /*3. ОСНОВНІ СТИЛІ*/
 body {
     min-height: 100vh;
@@ -38,18 +50,19 @@ body {
     margin: 0;
     padding: 0;
 }
+
 main {
     flex: 1;
     padding-block: var(--space-4);
 }
-/*Обмежує ширину контенту та центрує його(Лаб 7)*/
+
 .container {
     max-width: 1100px;
-    width:min(100% - 2 * var(--space-3), 1100px);
-    margin-inline: auto;;
+    width: min(100% - 2 * var(--space-3), 1100px);
     margin-inline: auto;
     padding-inline: var(--space-3);
 }
+
 /*4. ТИПОГРАФІКА*/
 h1 {
     font-size: clamp(1.75rem, 1.2rem + 2.5vw, 3rem);
@@ -64,6 +77,8 @@ h2 {
     line-height: 1.2;
     color: var(--color-primary);
     font-weight: 700;
+    margin-top: var(--space-xl);      
+    margin-bottom: var(--space-sm);   
 }
 
 h3 {
@@ -93,7 +108,7 @@ h6 {
     font-weight: 700;
     color: var(--color-primary);
 }
-/* Відступи між абзацами. (Лаб 6) */
+
 p {
     margin-top: 0;
     margin-bottom: var(--space-3);
@@ -107,11 +122,11 @@ h2 ~ p {
     color: var(--color-text-muted);
 }
 
-code,pre {
+code, pre {
     font-family: "Fira Code", Consolas, "Courier New", monospace;
 }
-/*5.ЗОБРАЖЕННЯ*/
-/* Підпис до зображення. (Лаб 6) */
+
+/*5. ЗОБРАЖЕННЯ*/
 figcaption {
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -119,21 +134,18 @@ figcaption {
     text-align: center;
 }
 
-
-/* Відступи навколо figure. (Лаб 6) */
 figure {
     margin: var(--space-4) auto;
     text-align: center;
 }
 
-
-/*Зображення не виходить за межі контейнера(Лаб 6) */
-figure img,main img {
+figure img, main img {
     display: block;
     margin: 0 auto;
     max-width: 100%;
     height: auto;
 }
+
 /*6. ГНУЧКА ШАПКА ТА МЕНЮ*/
 header {
     position: sticky;   
@@ -143,7 +155,6 @@ header {
     justify-content: space-between;
     align-items: center;
     gap: var(--space-3);
-    /*Дозволяє елементам перейти на новий рядок на вузькому екрані.(Лаб 8)*/
     flex-wrap: wrap;
 
     background:
@@ -156,7 +167,7 @@ header {
     color: var(--color-white);
     padding: var(--space-3) var(--space-4);
 }
-/* Назва сайту. (Лаб 8)*/
+
 .site-title {
     color: var(--color-white);
     font-weight: 700;
@@ -167,7 +178,6 @@ header {
 nav {
     display: block;
 }
-   
 
 nav li:last-child {
     margin-left: auto;
@@ -182,17 +192,14 @@ nav a {
 nav a:not(.active) {
     opacity: 0.85;
 }
-.card-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-3);
-}
+
 /*7. АДАПТИВНА ГАЛЕРЕЯ КАРТОК*/
 .card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: var(--space-3, 16px);
 }
+
 /*8. КАРТКИ*/
 .card {
     flex-direction: column;
@@ -208,21 +215,16 @@ nav a:not(.active) {
     transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
-
-/* Ефект при наведенні. (Лаб 7) */
 .card:hover {
     box-shadow: 0 6px 16px rgb(0 0 0 / 12%);
     transform: translateY(-2px);
 }
 
-
-/*Автовідступ поглинає вільний простір,тому кнопка опиняється внизу картки.(Лаб 8)*/
 .card .btn {
     margin-top: auto;
     align-self: flex-start;
 }
 
-/* Виділена картка з градієнтом. (Лаб 6)(ne isp) */
 .card.featured {
     background:
         linear-gradient(
@@ -234,7 +236,7 @@ nav a:not(.active) {
     border-left: none;
 }
 
-/*9.BADGE*/
+/*9. BADGE*/
 .badge {
     position: absolute;
     top: var(--space-2);
@@ -245,6 +247,7 @@ nav a:not(.active) {
     padding: var(--space-1) var(--space-2);
     border-radius: 4px;
 }
+
 /*10. КНОПКИ*/
 .btn {
     display: inline-block;
@@ -258,21 +261,20 @@ nav a:not(.active) {
     font-weight: 600;
     transition: transform 0.15s ease;
 }
-/* Зміщення кнопки під час натискання. (Лаб 7) */
+
 .btn:active {
     transform: translateY(1px);
 }
 
-/* Зміна кольору при наведенні. (Лаб 7) */
 .btn:hover {
     background: var(--color-primary-light);
 }
 
-/* Видимий фокус при навігації клавіатурою. (Лаб 7) */
 .btn:focus-visible {
     outline: 3px solid var(--color-accent);
     outline-offset: 2px;
 }
+
 /*11. КНОПКА "НАГОРУ"*/
 .back-to-top {
     position: fixed;
@@ -287,11 +289,10 @@ nav a:not(.active) {
     box-shadow: 0 2px 8px rgb(0 0 0 / 20%);
 }
 
-
-/* Зміна кольору при наведенні. (Лаб 7) */
 .back-to-top:hover {
     background: var(--color-primary-light);
 }
+
 /*12. МЕДІА-ОБ'ЄКТ*/
 .media {
     display: flex;
@@ -300,43 +301,36 @@ nav a:not(.active) {
     margin-bottom: var(--space-3);
 }
 
-/*Фіксований розмір піктограми.Не росте і не стискається.(Лаб 8)*/
 .media__icon {
     flex: 0 0 32px;
     width: 32px;
     height: 32px;
 }
 
-/*Текст займає весь вільний простір.(Лаб 8)*/
 .media__body {
     flex: 1;
     margin: 0;
 }
-/*13. ПОСИЛАННЯ*/
-/* Основний стиль посилань. (Лаб 6) */
+
+/*13. ПОСИЛАННЯ (Виправлено неіснуючу змінну --color-primary-text) */
 main a {
-    color: var(--color-primary-text);
+    color: var(--color-primary);
     text-decoration: underline;
 }
 
-/* Зміна кольору при наведенні. (Лаб 6) */
 main a:hover {
     color: var(--color-primary-light);
 }
 
-
-/* Позначення зовнішнього посилання. (Лаб 6) */
 a[href^="http"]::after {
     content: " ↗";
 }
 
-
-/* Позначення PDF-файлу. (Лаб 6) */
 a[href$=".pdf"]::after {
     content: " (PDF)";
 }
+
 /*14. ЦИТАТИ ТА КОД*/
-/* Оформлення цитат. (Лаб 6) */
 blockquote {
     border-left: 4px solid var(--color-primary);
     padding-left: var(--space-3);
@@ -345,8 +339,6 @@ blockquote {
     font-style: italic;
 }
 
-
-/* Оформлення коду. (Лаб 6) */
 code {
     background: var(--color-primary-soft);
     padding: var(--space-1) var(--space-2);
@@ -354,47 +346,38 @@ code {
     font-size: 0.9em;
 }
 
-
-/* Колір маркерів списку.(Лаб 6) */
 li::marker {
     color: var(--color-primary);
 }
 
 /*15. ТАБЛИЦІ*/
-/* Загальний стиль таблиці. (Лаб 6) */
 table {
     border-collapse: collapse;
     width: 100%;
     margin-bottom: var(--space-4);
 }
 
-
-/*Внутрішні відступи клітинок.Використовується система відступів.(Лаб 7)*/
-th,td {
+th, td {
     padding: var(--space-2) var(--space-3);
     border: 1px solid var(--color-border-dark);
     text-align: left;
 }
 
-
-/*Заголовки таблиці.(Лаб 6)*/
 th {
     background-color: var(--color-primary-soft);
     color: var(--color-primary-light);
     font-weight: 700;
 }
 
-/* Зебра-рядки таблиці.(Лаб 6)*/
 tbody tr:nth-child(even) {
     background-color: var(--color-primary-soft);
 }
+
 /*16. ФОРМИ*/
-/* Обмеження ширини форми.(Лаб 6)*/
 form {
     max-width: 650px;
 }
 
-/* Група полів форми. (Лаб 6) */
 fieldset {
     border: 1px solid var(--color-border-dark);
     border-radius: 6px;
@@ -402,17 +385,13 @@ fieldset {
     margin-bottom: var(--space-3);
 }
 
-
-/* Заголовок групи полів. (Лаб 6) */
 legend {
     font-weight: 600;
     color: var(--color-primary);
     padding: 0 var(--space-1);
 }
 
-
-/* Успадкування шрифту для елементів форми. (Лаб 6) */
-input,textarea,select,button {
+input, textarea, select, button {
     font-family: inherit;
     font-size: 1rem;
 }
@@ -438,12 +417,17 @@ textarea {
     border-radius: 6px;
 }
 
-/* Позначення обов'язкових полів. (Лаб 6) */
-input[required],select[required],textarea[required] {
+input[required], select[required], textarea[required] {
     border-left: 3px solid var(--color-primary);
 }
-/*17. FOOTER
-Footer знаходиться після(Лаб 8)*/
+
+.field label,
+form label { 
+    margin-bottom: var(--space-xs);   
+    display: block;
+}
+
+/*17. FOOTER*/
 footer {
     background: var(--color-primary);
     color: var(--color-white);
@@ -454,19 +438,12 @@ footer {
 footer a {
     color: var(--color-white);
 }
-/*19.ЗМЕНШЕННЯ АНІМАЦІЙ */
-/*Вимикає зайві анімації для користувачів,які обрали зменшення руху.(Лаб 7)*/
-@media (prefers-reduced-motion: reduce) {
 
-    *,*::before,*::after {
+/*18. АНІМАЦІЇ ТА АДАПТИВНІСТЬ (GRID) */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
         animation-duration: 0.01ms !important;
         transition-duration: 0.01ms !important;
-    }
-}
-
-@media (min-width: 1200px) {
-    .page {
-        grid-template-columns: 280px 1fr;
     }
 }
 
@@ -482,27 +459,17 @@ footer a {
     min-height: 100vh;
 }
 
-/*.grid-lab {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 100px 100px;
-    gap: var(--space-2, 10px);
-    border: 2px dashed #b8c2cc;
-    margin: 20px 0;
-}
-.grid-lab__item {
-    background: var(--color-primary-soft, #e2e8f0);
-    text-align: center;
-    padding: 10px;
-}
-    */
-.grid-lab__item--wide { grid-column: span 2; }     /* два стовпці */
-.grid-lab__item--full { grid-column: 1 / -1; }     /* на всю ширину сітки */
-.grid-lab__item--tall { grid-row: span 2; }        /* два рядки */
+.page__header  { grid-area: header; }
+.page__sidebar { grid-area: sidebar; }
+.page__main    { grid-area: main; }
+.page__footer  { grid-area: footer; }
+
+.grid-lab__item--wide { grid-column: span 2; }     
+.grid-lab__item--full { grid-column: 1 / -1; }     
+.grid-lab__item--tall { grid-row: span 2; }        
 
 @media (min-width: 768px) {
     .page {
-        display: grid;
         grid-template-columns: 280px 1fr; 
         grid-template-areas:
             "header  header"
@@ -510,14 +477,14 @@ footer a {
             "footer  footer";
         gap: var(--space-4); 
         max-width: 1600px;        
-        min-height: 100vh;
-
     }
 }
-.page__header  { grid-area: header; }
-.page__sidebar { grid-area: sidebar; }
-.page__main    { grid-area: main; }
-.page__footer  { grid-area: footer; }
+
+@media (min-width: 1200px) {
+    .page {
+        grid-template-columns: 280px 1fr;
+    }
+}
 
 .stats {
     display: grid;
@@ -526,6 +493,7 @@ footer a {
     place-items: center;
     text-align: center;
 }
+
 .stats__item {
     background: var(--color-primary-soft, #e2e8f0);
     padding: var(--space-3, 16px);
@@ -533,15 +501,16 @@ footer a {
     font-weight: 700;
     width: 100%;
 }
+
 .table-wrap { overflow-x: auto; }
+
 .page__sidebar {
-    grid-area: sidebar;
     background: var(--color-primary-soft);
     padding: var(--space-3);
     border-radius: 8px;
     align-self: start; 
 }
-/*оформлення меню в сайдбарі */
+
 .page__sidebar .menu {
     list-style: none;
     padding: 0;
@@ -562,39 +531,27 @@ footer a {
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.page__sidebar .menu__link:hover {
+.page__sidebar .menu__link:hover,
+.page__sidebar .menu__link.active {
     background-color: var(--color-primary);
     color: var(--color-white);
 }
+
 .page__sidebar h2 {
     color: var(--color-primary-light); 
     font-size: 1.5rem; 
     margin-bottom: var(--space-3);
 }
-/* Перша картка займає дві комірки по горизонталі й дві по вертикалі  */
+
 .card-grid .card:first-child {
     grid-column: span 2;
     grid-row: span 2;
 }
 
 /* ================================================================= */
-/* НОВЕ ДОДАНО ДЛЯ ЛАБОРАТОРНОЇ З РЕДИЗАЙНУ ТА ІЄРАРХІЇ (КРОКИ 5-11)   */
+/* СІТКА РЕДИЗАЙНУ (КРОКИ 5-11)                                       */
 /* ================================================================= */
 
-:root {
-    --color-bg: #FFFFFF;         
-    --color-surface: #F5F7FA;    
-    --color-accent-new: #E74C3C; 
-
-    --space-xs: 4px;
-    --space-sm: 8px;
-    --space-md: 16px;
-    --space-lg: 24px;
-    --space-xl: 32px;
-    --space-2xl: 48px;
-}
-
-/* Основна сітка сторінки (12 колонок) */
 .page-grid {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -604,34 +561,20 @@ footer a {
     padding-inline: var(--space-md); 
 }
 
-/* Класи для розбивки блоків по колонках */
 .span-12 { grid-column: span 12; }
 .span-8  { grid-column: span 8; }
 .span-4  { grid-column: span 4; }
+.span-6  { grid-column: span 6; }
 
-/* Вертикальний ритм та відступи блоків */
 .section { 
     margin-bottom: var(--space-xl); 
 }
 
 .section + .section,
 .card + .card { 
-    margin-top: var(--space-2xl); /* «Повітря» між секціями удвічі більше */
+    margin-top: var(--space-2xl); 
 }
 
-/* Близькість для заголовків та підписів */
-h2 {
-    margin-top: var(--space-xl);      
-    margin-bottom: var(--space-sm);   
-}
-
-.field label,
-form label { 
-    margin-bottom: var(--space-xs);   
-    display: block;
-}
-
-/* Акцентний заклик та ієрархія кнопок */
 .btn--primary,
 button[type="submit"].btn {               
     background-color: var(--color-accent-new);
