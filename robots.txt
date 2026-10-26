@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+ 
+Sitemap: https://krutyhila9-wq.github.io/lab01-Krutyh/sitemap.xml
