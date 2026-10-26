@@ -31,32 +31,40 @@
                 </ul>   
             </nav>
         </aside>
-    <main class="page__main container">
-        <h1>Зворотний зв'язок</h1>
-        
-        <form action="https://example.com/submit" method="post">
-            <label for="name">Ім'я:</label>
-            <input type="text" id="name" name="name" required><br><br>
+    <main class="page-grid">
+        <section class="card span-12">
+            <h1>Зворотний зв'язок</h1>
+            
+            <form action="https://example.com/submit" method="post">
+                <div class="field">
+                    <label for="name">Ім'я:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
 
-            <label for="email">Електронна пошта:</label>
-            <input type="email" id="email" name="email" required><br><br>
-        
-            <label for="subject">Тема звернення:</label>
-            <select id="subject" name="subject" required>
-                <option value="">Виберіть тему</option>
-                <option value="question">Питання</option>
-                <option value="feedback">Зворотний зв'язок</option>
-                <option value="complaint">Скарга</option>
-            </select>
-            <br><br>
+                <div class="field">
+                    <label for="email">Електронна пошта:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+            
+                <div class="field">
+                    <label for="subject">Тема звернення:</label>
+                    <select id="subject" name="subject" required>
+                        <option value="">Виберіть тему</option>
+                        <option value="question">Питання</option>
+                        <option value="feedback">Зворотний зв'язок</option>
+                        <option value="complaint">Скарга</option>
+                    </select>
+                </div>
 
-            <label for="message">Текст повідомлення:</label><br>
-            <textarea id="message" name="message" rows="5" minlength="10" required></textarea>
-            <br><br>
+                <div class="field">
+                    <label for="message">Текст повідомлення:</label>
+                    <textarea id="message" name="message" rows="5" minlength="10" required></textarea>
+                </div>
 
-            <button type="submit" class="btn">Надіслати</button>
-            <button type="reset" class="btn">Очистити форму</button>
-        </form>
+                <button type="submit" class="btn btn--primary">Надіслати</button>
+                <button type="reset" class="btn">Очистити форму</button>
+            </form>
+        </section>
     </main>
     <footer class="page__footer">
             <address>

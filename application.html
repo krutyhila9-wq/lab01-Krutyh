@@ -31,84 +31,92 @@
                 </ul>   
             </nav>
         </aside>
-    <main class="page__main container">
-        <h1>Заявка на участь у проєкті</h1>
+<main class="page-grid">
+        <section class="card span-12">
+            <h1>Заявка на участь у проєкті</h1>
 
-        <form action="submit" method="post">
-            <fieldset>
-                <legend>Контактна інформація</legend>
-                <label for="fullname">Прізвище та ім'я:</label>
-                <input type="text" id="fullname" name="fullname" minlength="5" maxlength="100" autocomplete="name" required>
-                <br><br>
-            
-                <label for="email">Електронна пошта:</label>
-                <input type="email" id="email" name="email" autocomplete="email" required>
-                <br><br>   
-
-                <label for="phone">Номер телефону:</label>
-                <input type="tel" id="phone" name="phone" autocomplete="tel"
-                pattern="\+380[0-9]{9}" 
-                title="Формат: +380671234567" required>
-                <br><br>
-
-                <label for="course">Курс навчання:</label>
-                <select id="course" name="course" required>
-                    <option value="">Виберіть курс</option>
-                    <option value="1">1 курс</option>
-                    <option value="2">2 курс</option>
-                    <option value="3">3 курс</option>
-                    <option value="4">4 курс</option>
-                </select>
-                <br><br>    
-            </fieldset>
-
-            <fieldset>
-                <legend>Деталі участі</legend>
-                <label for="start-date">Дата початку участі:</label>
-                <input type="date" id="start-date" name="start_date">
-                <br><br>
-            
-                <label for="level">Рівень підготовки:</label><br>
-                <input type="radio" id="level_beginner" name="prep_level" value="Початковий">
-                <label for="level_beginner">Початковий</label>
+            <form action="submit" method="post">
+                <fieldset>
+                    <legend>Контактна інформація</legend>
+                    <div class="field">
+                        <label for="fullname">Прізвище та ім'я:</label>
+                        <input type="text" id="fullname" name="fullname" minlength="5" maxlength="100" autocomplete="name" required>
+                    </div>
                 
-                <input type="radio" id="level_intermediate" name="prep_level" value="Середній">
-                <label for="level_intermediate">Середній</label>
-                
-                <input type="radio" id="level_advanced" name="prep_level" value="Високий">
-                <label for="level_advanced">Високий</label>
-                <br><br>
-            
-                <label for="stack">Технологічний стек:</label>
-                <select id="stack" name="stack" required>
-                    <option value="">Виберіть технологію</option> 
-                    <optgroup label="Мови програмування">
-                        <option value="python">Python</option>
-                        <option value="cpp">C++</option>
-                    </optgroup>
-                    <optgroup label="Клієнтські технології">
-                        <option value="js">JavaScript</option>
-                    </optgroup>
-                </select>
-                <br><br>
-            </fieldset>
-            
-            <fieldset>
-                <legend>Досвід та портфоліо</legend>
+                    <div class="field">
+                        <label for="email">Електронна пошта:</label>
+                        <input type="email" id="email" name="email" autocomplete="email" required>
+                    </div>   
 
-                <label for="portfolio">Файл портфоліо:</label>
-                <input type="file" id="portfolio" name="portfolio" accept=".pdf,.doc,.docx,.zip">
-                <br><br>
-            
-                <label for="message">Короткий опис досвіду:</label><br>
-                <textarea id="message" name="message" rows="5" minlength="10" placeholder="Розкажіть коротко про свій досвід у програмуванні..." required></textarea>
-                <br><br>
-            </fieldset>
-            
-            <button type="submit" class="btn">Надіслати заявку</button>
-            <button type="reset" class="btn">Очистити форму</button>
-            <button type="button" id="preview-btn" class="btn">Попередній перегляд</button>
-        </form>
+                    <div class="field">
+                        <label for="phone">Номер телефону:</label>
+                        <input type="tel" id="phone" name="phone" autocomplete="tel" pattern="\+380[0-9]{9}" title="Формат: +380671234567" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="course">Курс навчання:</label>
+                        <select id="course" name="course" required>
+                            <option value="">Виберіть курс</option>
+                            <option value="1">1 курс</option>
+                            <option value="2">2 курс</option>
+                            <option value="3">3 курс</option>
+                            <option value="4">4 курс</option>
+                        </select>
+                    </div>    
+                </fieldset>
+
+                <fieldset>
+                    <legend>Деталі участі</legend>
+                    <div class="field">
+                        <label for="start-date">Дата початку участі:</label>
+                        <input type="date" id="start-date" name="start_date">
+                    </div>
+                
+                    <div class="field">
+                        <label>Рівень підготовки:</label><br>
+                        <input type="radio" id="level_beginner" name="prep_level" value="Початковий">
+                        <label for="level_beginner" style="display:inline;">Початковий</label><br>
+                        
+                        <input type="radio" id="level_intermediate" name="prep_level" value="Середній">
+                        <label for="level_intermediate" style="display:inline;">Середній</label><br>
+                        
+                        <input type="radio" id="level_advanced" name="prep_level" value="Високий">
+                        <label for="level_advanced" style="display:inline;">Високий</label>
+                    </div>
+                
+                    <div class="field">
+                        <label for="stack">Технологічний стек:</label>
+                        <select id="stack" name="stack" required>
+                            <option value="">Виберіть технологію</option> 
+                            <optgroup label="Мови програмування">
+                                <option value="python">Python</option>
+                                <option value="cpp">C++</option>
+                            </optgroup>
+                            <optgroup label="Клієнтські технології">
+                                <option value="js">JavaScript</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                </fieldset>
+                
+                <fieldset>
+                    <legend>Досвід та портфоліо</legend>
+                    <div class="field">
+                        <label for="portfolio">Файл портфоліо:</label>
+                        <input type="file" id="portfolio" name="portfolio" accept=".pdf,.doc,.docx,.zip">
+                    </div>
+                
+                    <div class="field">
+                        <label for="message">Короткий опис досвіду:</label>
+                        <textarea id="message" name="message" rows="5" minlength="10" placeholder="Розкажіть коротко про свій досвід у програмуванні..." required></textarea>
+                    </div>
+                </fieldset>
+                
+                <button type="submit" class="btn btn--primary">Надіслати заявку</button>
+                <button type="reset" class="btn">Очистити форму</button>
+                <button type="button" id="preview-btn" class="btn">Попередній перегляд</button>
+            </form>
+        </section>
     </main>
     <footer class="page__footer">
             <address>

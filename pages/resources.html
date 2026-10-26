@@ -34,13 +34,13 @@
         </nav>
    </aside>
     
-    <main class="page__main container">
-    
-    <h1>Ресурси</h1>
+    <main class="page-grid">
+        <section class="span-12">
+            <h1>Ресурси</h1>
+        </section>
 
-    <section class="card">
-        <h2>Порядок вивчення програмування</h2>
-    
+        <section class="card span-6">
+            <h2>Порядок вивчення програмування</h2>
             <ol>
                 <li>Вивчити основи програмування</li>
                 <li>Ознайомитися з мовами програмування</li>
@@ -48,101 +48,63 @@
                 <li>Навчитися працювати з алгоритмами</li>
                 <li>Створювати власні програми</li>
             </ol>
-    </section>
+        </section>
 
+        <section class="card span-6">
+            <h2>Популярні мови програмування</h2>
+            <ul>
+                <li>Python
+                    <ul>
+                        <li>Простий синтаксис</li>
+                        <li>Велика кількість бібліотек</li>
+                    </ul>
+                </li>
+                <li>Java
+                    <ul>
+                        <li>Об'єктно-орієнтоване програмування</li>
+                        <li>Кросплатформність</li>
+                    </ul>
+                </li>
+                <li>C++
+                    <ul>
+                        <li>Висока продуктивність</li>
+                        <li>Робота з пам'яттю</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
 
-     <section class="card">
-        <h2>Популярні мови програмування</h2>
+        <section class="card span-6">
+            <h2>Глосарій</h2>
+            <dl>
+                <dt>Мова програмування</dt>
+                <dd>Формальна мова для створення програм та алгоритмів.</dd>
+                <dt>Парадигма</dt>
+                <dd>Підхід до організації та написання програмного коду.</dd>
+                <dt>Алгоритм</dt>
+                <dd>Послідовність дій для розв'язання певної задачі.</dd>
+                <dt>Змінна</dt>
+                <dd>Іменована область пам'яті для зберігання значення.</dd>
+                <dt>Функція</dt>
+                <dd>Окремий блок коду, який виконує певне завдання.</dd>
+            </dl>
+        </section>
 
-        <ul>
-            <li>Python
-                <ul>
-                    <li>Простий синтаксис</li>
-                    <li>Велика кількість бібліотек</li>
-                </ul>
-            </li>
+        <section class="card span-6">
+            <h2>Корисні джерела</h2>
+            <ul>
+                <li><a href="https://developer.mozilla.org/" target="_blank" rel="noopener">MDN Web Docs</a></li>
+                <li><a href="https://www.python.org/" target="_blank" rel="noopener">Python</a></li>
+                <li><a href="https://www.java.com/" target="_blank" rel="noopener">Java</a></li>
+                <li><a href="https://isocpp.org/" target="_blank" rel="noopener">C++</a></li>
+                <li><a href="https://www.w3schools.com/" target="_blank" rel="noopener">W3Schools</a></li>
+            </ul>
+        </section>
 
-            <li>Java
-                <ul>
-                    <li>Об'єктно-орієнтоване програмування</li>
-                    <li>Кросплатформність</li>
-                </ul>
-            </li>
-
-            <li>C++
-                <ul>
-                    <li>Висока продуктивність</li>
-                    <li>Робота з пам'яттю</li>
-                </ul>
-            </li>
-        </ul>
-    </section>
-
-
-    <section class="card">
-        <h2>Глосарій</h2>
-
-        <dl>
-            <dt>Мова програмування</dt>
-            <dd>Формальна мова для створення програм та алгоритмів.</dd>
-
-            <dt>Парадигма</dt>
-            <dd>Підхід до організації та написання програмного коду.</dd>
-
-            <dt>Алгоритм</dt>
-            <dd>Послідовність дій для розв'язання певної задачі.</dd>
-
-            <dt>Змінна</dt>
-            <dd>Іменована область пам'яті для зберігання значення.</dd>
-
-            <dt>Функція</dt>
-            <dd>Окремий блок коду, який виконує певне завдання.</dd>
-        </dl>
-    </section>
-
-
-
-    <section class="card">
-        <h2>Корисні джерела</h2>
-
-        <ul>
-            <li>
-                <a href="https://developer.mozilla.org/" target="_blank" rel="noopener">
-                    MDN Web Docs
-                </a>
-            </li>
-
-            <li>
-                <a href="https://www.python.org/" target="_blank" rel="noopener">
-                    Python
-                </a>
-            </li>
-
-            <li>
-                <a href="https://www.java.com/" target="_blank" rel="noopener">
-                    Java
-                </a>
-            </li>
-
-            <li>
-                <a href="https://isocpp.org/" target="_blank" rel="noopener">
-                    C++
-                </a>
-            </li>
-
-            <li>
-                <a href="https://www.w3schools.com/" target="_blank" rel="noopener">
-                    W3Schools
-                </a>
-            </li>
-        </ul>
-    </section>
-
-    <section class="card">
+        <section class="card span-12">
             <h2>Нові теми лабораторної роботи</h2>
 
             <h3>Етапи розробки програми</h3>
-
             <ol reversed>
                 <li>Тестування та відлагодження</li>
                 <li>Написання коду</li>
@@ -153,18 +115,14 @@
             </ol>
 
             <h3>Парадигми програмування</h3>
-
             <ul>
-                <li>
-                    Імперативне програмування
+                <li>Імперативне програмування
                     <ul>
                         <li>Послідовне виконання команд</li>
                         <li>Зміна стану програми</li>
                     </ul>
                 </li>
-
-                <li>
-                    Декларативне програмування
+                <li>Декларативне програмування
                     <ul>
                         <li>Опис того, що потрібно зробити</li>
                         <li>Використання логіки та правил</li>
@@ -173,41 +131,28 @@
             </ul>
 
             <h3>Терміни лабораторної роботи</h3>
-
             <article>
                 <h4>Семантичний HTML</h4>
-                <p>
-                    Використання тегів HTML відповідно до їхнього значення та призначення.
-                </p>
+                <p>Використання тегів HTML відповідно до їхнього значення та призначення.</p>
             </article>
 
             <dl>
                 <dt>Доступність</dt>
                 <dd>Ступінь, до якого програма може бути використана людьми з різними можливостями</dd>
-
                 <dt>Таблиця</dt>
                 <dd>Структурований спосіб представлення даних у вигляді рядків і стовпців</dd>
-
                 <dt>Colspan</dt>
                 <dd>Атрибут HTML, який дозволяє об'єднувати кілька стовпців у таблиці</dd>
-
                 <dt>Rowspan</dt>
                 <dd>Атрибут HTML, який дозволяє об'єднувати кілька рядків у таблиці</dd>
             </dl>
         </section>
 
-
-        <aside class="card">
+        <aside class="card span-12">
             <h2>Дивіться також</h2>
-            <p>
-                Для порівняння мов програмування та алгоритмів
-                перейдіть до сторінки «Порівняння».
-            </p>
-            <p>
-                <a href="../comparison.html">Порівняння технологій</a>
-            </p>
+            <p>Для порівняння мов програмування та алгоритмів перейдіть до сторінки «Порівняння».</p>
+            <p><a href="../comparison.html">Порівняння технологій</a></p>
         </aside>
-
     </main>
 
 
