@@ -627,3 +627,9 @@ form { max-width: none; }
     font-size: 0.85rem;
     color: var(--color-text-muted);
 }
+.page-grid .card-grid > .card {
+    grid-column: auto;
+    grid-row: auto;
+    margin: 0;
+    height: auto;
+}
