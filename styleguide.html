@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Довідник стилів (Styleguide)</title>
+    
+    <!-- Підключення основного файлу стилів -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Специфічні стилі тільки для оформлення самого довідника -->
+    <style>
+        body.styleguide {
+            background-color: #f4f6f8;
+            padding: 2rem;
+            display: block;
+        }
+        .sg-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .sg-header {
+            border-bottom: 2px solid var(--color-border);
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+        }
+        .sg-section {
+            margin-bottom: 4rem;
+        }
+        .sg-section-title {
+            border-bottom: 1px solid var(--color-border);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-text);
+        }
+        
+        /* Стилі для карток компонентів (sg-item) */
+        .sg-item {
+            margin-bottom: 2.5rem;
+            border: 1px solid var(--color-border-dark);
+            border-radius: 8px;
+            overflow: hidden;
+            background: var(--color-surface);
+        }
+        .sg-item h3 {
+            background: var(--color-primary-soft);
+            color: var(--color-text);
+            margin: 0;
+            padding: 1rem;
+            font-size: 1.1rem;
+            border-bottom: 1px solid var(--color-border-dark);
+        }
+        .sg-preview {
+            padding: 2rem;
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+        .sg-code {
+            background: #282c34;
+            color: #abb2bf;
+            margin: 0;
+            padding: 1.5rem;
+            overflow-x: auto;
+            font-size: 0.9rem;
+            border-top: 1px solid var(--color-border-dark);
+        }
+        .sg-code code {
+            background: transparent;
+            padding: 0;
+            border-radius: 0;
+            color: inherit;
+        }
+
+        /* Стилі для демонстрації токенів */
+        .sg-colors {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 1.5rem;
+        }
+        .sg-color-swatch {
+            height: 80px;
+            border-radius: 8px;
+            border: 1px solid rgba(0,0,0,0.1);
+            margin-bottom: 0.5rem;
+        }
+        .sg-color-name { font-weight: bold; font-size: 0.85rem; }
+        .sg-color-value { font-size: 0.75rem; color: var(--color-text-muted); }
+        
+        .sg-space-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        .sg-space-bar {
+            background: var(--color-primary-light);
+            height: 24px;
+            border-radius: 4px;
+        }
+        
+        /* Допоміжні класи для імітації станів у довіднику */
+        .is-hover { background: var(--color-primary-light) !important; transform: translateY(-1px); }
+        .is-focus { outline: 3px solid var(--color-accent) !important; outline-offset: 2px; }
+        .is-disabled { opacity: 0.6; cursor: not-allowed; pointer-events: none; }
+    </style>
+</head>
+<body class="styleguide">
+
+<div class="sg-container">
+    <header class="sg-header">
+        <h1>Довідник стилів проєкту</h1>
+        <p>Токени, компоненти та готові шаблони розмітки для швидкого використання.</p>
+    </header>
+
+    <!-- ТОКЕНИ -->
+    <section class="sg-section">
+        <h2 class="sg-section-title">1. Токени (Кольори)</h2>
+        <div class="sg-colors">
+            <div>
+                <div class="sg-color-swatch" style="background: var(--color-primary)"></div>
+                <div class="sg-color-name">--color-primary</div>
+            </div>
+            <div>
+                <div class="sg-color-swatch" style="background: var(--color-primary-light)"></div>
+                <div class="sg-color-name">--color-primary-light</div>
+            </div>
+            <div>
+                <div class="sg-color-swatch" style="background: var(--color-primary-soft)"></div>
+                <div class="sg-color-name">--color-primary-soft</div>
+            </div>
+            <div>
+                <div class="sg-color-swatch" style="background: var(--color-accent)"></div>
+                <div class="sg-color-name">--color-accent</div>
+            </div>
+            <div>
+                <div class="sg-color-swatch" style="background: var(--color-accent-new)"></div>
+                <div class="sg-color-name">--color-accent-new</div>
+            </div>
+            <div>
+                <div class="sg-color-swatch" style="background: var(--color-text)"></div>
+                <div class="sg-color-name">--color-text</div>
+            </div>
+            <div>
+                <div class="sg-color-swatch" style="background: var(--color-border-dark)"></div>
+                <div class="sg-color-name">--color-border-dark</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sg-section">
+        <h2 class="sg-section-title">2. Токени (Типографіка)</h2>
+        <h1>Heading 1 (h1) - var(--font-size-fluid)</h1>
+        <h2>Heading 2 (h2) - var(--font-size-3xl)</h2>
+        <h3>Heading 3 (h3) - var(--font-size-xl)</h3>
+        <h4>Heading 4 (h4) - var(--font-size-lg)</h4>
+        <p>Основний текст (p) - var(--font-size-base). Lorem ipsum dolor sit amet, consectetur adipiscing elit. Звичайний текст для прикладу міжрядкового інтервалу та кольору.</p>
+        <p class="gallery-end">Текст-підпис (.gallery-end) - var(--font-size-md)</p>
+    </section>
+
+    <section class="sg-section">
+        <h2 class="sg-section-title">3. Токени (Відступи)</h2>
+        <div class="sg-space-item">
+            <div style="width: 100px;">--space-sm</div>
+            <div class="sg-space-bar" style="width: var(--space-sm)"></div>
+        </div>
+        <div class="sg-space-item">
+            <div style="width: 100px;">--space-md</div>
+            <div class="sg-space-bar" style="width: var(--space-md)"></div>
+        </div>
+        <div class="sg-space-item">
+            <div style="width: 100px;">--space-lg</div>
+            <div class="sg-space-bar" style="width: var(--space-lg)"></div>
+        </div>
+        <div class="sg-space-item">
+            <div style="width: 100px;">--space-xl</div>
+            <div class="sg-space-bar" style="width: var(--space-xl)"></div>
+        </div>
+    </section>
+
+    <!-- КОМПОНЕНТИ -->
+    <section class="sg-section">
+        <h2 class="sg-section-title">4. Компоненти</h2>
+
+        <!-- Кнопка -->
+        <section class="sg-item">
+            <h3>Кнопка (.btn, .btn--primary)</h3>
+            <div class="sg-preview">
+                <button class="btn">Звичайна</button>
+                <button class="btn is-hover">Наведення</button>
+                <button class="btn is-focus">Фокус</button>
+                <button class="btn is-disabled" disabled>Вимкнена</button>
+                <button class="btn btn--primary">Акцентна (Primary)</button>
+            </div>
+<pre class="sg-code"><code>&lt;!-- Стандартна кнопка --&gt;
+&lt;button class="btn"&gt;Кнопка&lt;/button&gt;
+&lt;a href="#" class="btn"&gt;Посилання-кнопка&lt;/a&gt;
+
+&lt;!-- Акцентна кнопка (редизайн) --&gt;
+&lt;button class="btn btn--primary"&gt;Почати&lt;/button&gt;
+
+&lt;!-- Вимкнений стан --&gt;
+&lt;button class="btn is-disabled" disabled&gt;Вимкнена&lt;/button&gt;</code></pre>
+        </section>
+
+        <!-- Картка -->
+        <section class="sg-item">
+            <h3>Картка (.card, .featured)</h3>
+            <div class="sg-preview" style="background: #f8f9fa;">
+                
+                <div class="card" style="width: 300px;">
+                    <h4>Звичайна картка</h4>
+                    <p>Текст опису всередині стандартної картки з лінією зліва.</p>
+                    <a href="#" class="btn">Детальніше</a>
+                </div>
+
+                <div class="card featured" style="width: 300px;">
+                    <h4>Виділена картка</h4>
+                    <p>Картка з градієнтним фоном для важливої інформації.</p>
+                    <a href="#" class="btn" style="background: var(--color-surface); color: var(--color-primary);">Детальніше</a>
+                </div>
+
+            </div>
+<pre class="sg-code"><code>&lt;!-- Звичайна картка --&gt;
+&lt;div class="card"&gt;
+    &lt;h4&gt;Заголовок картки&lt;/h4&gt;
+    &lt;p&gt;Текст опису.&lt;/p&gt;
+    &lt;a href="#" class="btn"&gt;Детальніше&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;!-- Виділена картка --&gt;
+&lt;div class="card featured"&gt;
+    &lt;h4&gt;Виділена картка&lt;/h4&gt;
+    &lt;p&gt;Важлива інформація.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+        </section>
+
+        <!-- Бейдж -->
+        <section class="sg-item">
+            <h3>Бейдж (.badge)</h3>
+            <div class="sg-preview">
+                <div style="position: relative; width: 150px; height: 100px; background: #eee; border-radius: 8px;">
+                    <span class="badge">Новинка</span>
+                </div>
+            </div>
+<pre class="sg-code"><code>&lt;!-- Бейдж позиціонується абсолютно відносно батьківського блоку (position: relative) --&gt;
+&lt;span class="badge"&gt;Текст бейджа&lt;/span&gt;</code></pre>
+        </section>
+
+        <!-- Форми -->
+        <section class="sg-item">
+            <h3>Поля форми (input, textarea)</h3>
+            <div class="sg-preview">
+                <form style="width: 100%;">
+                    <div class="field" style="margin-bottom: 1rem;">
+                        <label>Звичайне поле</label>
+                        <input type="text" placeholder="Введіть текст...">
+                    </div>
+                    <div class="field" style="margin-bottom: 1rem;">
+                        <label>Обов'язкове поле (required)</label>
+                        <input type="text" required placeholder="Має ліву акцентну лінію">
+                    </div>
+                    <div class="field" style="margin-bottom: 1rem;">
+                        <label>Поле з фокусом (імітація)</label>
+                        <input type="text" class="is-focus" placeholder="Введіть текст...">
+                    </div>
+                    <div class="field">
+                        <label>Вимкнене поле</label>
+                        <input type="text" disabled placeholder="Неактивне">
+                    </div>
+                </form>
+            </div>
+<pre class="sg-code"><code>&lt;div class="field"&gt;
+    &lt;label for="name"&gt;Ім'я&lt;/label&gt;
+    &lt;input type="text" id="name" required placeholder="Введіть ім'я..."&gt;
+&lt;/div&gt;</code></pre>
+        </section>
+
+    </section>
+
+</div>
+
+</body>
+</html>
